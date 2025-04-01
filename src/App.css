@@ -1,42 +1,71 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  border: 2px solid green;
+  height: 15%;
+  min-width: inherit;
+
+  padding: 20px;
   text-align: center;
+  background: #f9f7f7;
+  margin: 30px;
+  font-size: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.nav {
+  border: 2px solid red;
+  height: 5%;
+  width: inherit;
+  margin: 30px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.side-panel {
+  padding: 0;
+  width: 250px;
+  background-color: white;
+  position: fixed;
+  height: 350px;
+  overflow: auto;
+  margin: 30px;
+  border: 2px solid green;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.side-panel a.active {
+  background-color: #04aa6d;
+  color: white;
 }
 
-.card {
-  padding: 2em;
+.side-panel a:hover:not(.active) {
+  background-color: #555;
+  color: white;
 }
 
-.read-the-docs {
-  color: #888;
+.details {
+  padding: 0;
+  margin-left: 300px;
+  font-size: 20px;
+  height: 350px;
+  overflow: auto;
+  background-color: white;
+  width: 1100px;
+  position: fixed;
+  margin-right: 30px;
+  margin-top: 30px;
+  border: 2px solid green;
+}
+
+.footer {
+  border: 2px solid red;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f9f7f7;
+  color: red;
+  height: 15%;
+  text-align: center;
 }
