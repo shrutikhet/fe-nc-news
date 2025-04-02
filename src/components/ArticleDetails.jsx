@@ -1,6 +1,8 @@
 import { useParams } from "react-router";
 import { getArticleDetails } from "../api/api";
 import { useState, useEffect } from "react";
+import Comments from "./Comments";
+import CommentIcon from "@mui/icons-material/Comment";
 
 function ArticleDetails() {
   const { article_id } = useParams();
@@ -26,7 +28,9 @@ function ArticleDetails() {
       </span>
 
       <span id="article-author"> Author: {articleDetails.author}</span>
-      <span id="article-comment"> Comment: {articleDetails.comment_count}</span>
+      <span id="article-comment">Comment: {articleDetails.comment_count}</span>
+      <CommentIcon />
+      <Comments />
     </div>
   );
 }
