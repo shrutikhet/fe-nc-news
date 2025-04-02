@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .header {
@@ -14,6 +15,8 @@
   background: #f9f7f7;
   margin: 30px;
   font-size: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav {
@@ -23,15 +26,26 @@
   margin: 30px;
 }
 
+.resize {
+  width: 300px;
+  height: 150px;
+}
+.article-item {
+  padding: 2px;
+}
 .side-panel {
-  padding: 0;
-  width: 250px;
-  background-color: white;
+  padding-left: 1rem;
+  width: 220px;
+  background-color: #ffffff;
   position: fixed;
   height: 350px;
   overflow: auto;
   margin: 30px;
   border: 2px solid green;
+  display: flex;
+  justify-content: space-between;
+  outline: 3px solid #ff0000;
+  outline-offset: 15px;
 }
 
 .side-panel a.active {
@@ -43,9 +57,14 @@
   background-color: #555;
   color: white;
 }
-
+img {
+  width: 100%;
+  height: auto;
+  height: 250px;
+  object-fit: cover;
+}
 .details {
-  padding: 0;
+  padding-left: 1rem;
   margin-left: 300px;
   font-size: 20px;
   height: 350px;

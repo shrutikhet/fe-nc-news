@@ -1,7 +1,14 @@
+import { Link } from "react-router";
+
 function Header(props) {
   return (
     <div className="header">
-      <h1>News</h1>
+      <Link to="/">
+        <img src="../src/assets/logo.jpg" alt="my logo" className="resize" />
+      </Link>
+      <label>Search</label>
+      <input></input>
+      <p>user</p>
     </div>
   );
 }
