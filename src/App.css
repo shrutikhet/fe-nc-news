@@ -105,3 +105,9 @@ img {
 .color-title {
   background-color: rosybrown;
 }
+
+.comments {
+  background-color: #ffffff;
+  padding: 5px;
+  border: 2px solid black;
+}
