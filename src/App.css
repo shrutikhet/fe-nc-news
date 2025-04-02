@@ -43,7 +43,7 @@
   width: 220px;
   background-color: #ffffff;
   position: fixed;
-  height: 450px;
+  height: 470px;
   overflow: auto;
   margin: 30px;
   border: 2px solid green;
@@ -65,12 +65,14 @@ img {
   height: auto;
   height: 250px;
   object-fit: cover;
+  padding: 10px;
+  border-radius: 5%;
 }
 .details {
   padding-left: 1rem;
   margin-left: 300px;
   font-size: 20px;
-  height: 450px;
+  height: 470px;
   overflow: auto;
   background-color: white;
   width: 1100px;
@@ -90,4 +92,16 @@ img {
   color: red;
   height: 15%;
   text-align: center;
+}
+
+.line-height {
+  line-height: 1.5;
+}
+
+.color-bk {
+  background-color: cadetblue;
+}
+
+.color-title {
+  background-color: rosybrown;
 }
