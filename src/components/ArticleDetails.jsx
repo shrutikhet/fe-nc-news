@@ -16,8 +16,17 @@ function ArticleDetails() {
       });
   }, []);
   return (
-    <div className="details">
-      <span id="article-body">{articleDetails.body}</span>
+    <div className="details line-height color-bk">
+      <span id="article-img">
+        <img src={articleDetails.article_img_url} alt="soemthing else" />
+      </span>
+      <span id="article-title">{articleDetails.title}</span>
+      <span id="article-body" className="color-title">
+        {articleDetails.body}
+      </span>
+
+      <span id="article-author"> Author: {articleDetails.author}</span>
+      <span id="article-comment"> Comment: {articleDetails.comment_count}</span>
     </div>
   );
 }
