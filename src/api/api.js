@@ -30,3 +30,11 @@ export const getComments = (article_id) => {
       return data.comments;
     });
 };
+
+export const changeVotes = (article_id,value) => {
+  return newsApi
+    .patch(`/api/articles/${article_id}`, { inc_votes: `${value}` })
+    .then(({ data }) => {
+      return data.articles;
+    });
+};

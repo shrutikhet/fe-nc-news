@@ -1,7 +1,8 @@
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+
 import { Link } from "react-router";
 function ArticleItem({ article }) {
+
+  
   return (
     <>
       <Link to={`/articles/${article.article_id}`}>
@@ -16,8 +17,6 @@ function ArticleItem({ article }) {
               loading="lazy"
             />
             Votes: {article.votes}
-            <ThumbUpIcon />
-            <ThumbDownIcon />
           </section>
         </div>
       </Link>

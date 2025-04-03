@@ -19,7 +19,7 @@ function Comments() {
       {comments.length > 0
         ? comments.map((comment) => {
             return (
-              <div className="comments">
+              <div className="comments" key={comment.comment_id}>
                 {comment.comment_id} {comment.body}
               </div>
             );
