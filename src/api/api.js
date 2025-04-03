@@ -52,3 +52,9 @@ export const addComments = (
       console.log(data);
     });
 };
+
+export const deleteComments = (comment_id) => {
+  return newsApi.delete(`/api/comments/${comment_id}`).then(({ data }) => {
+    return data.comments;
+  });
+};

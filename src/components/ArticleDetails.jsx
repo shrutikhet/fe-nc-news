@@ -6,12 +6,14 @@ import CommentIcon from "@mui/icons-material/Comment";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import CommentBox from "./CommentBox";
+import { Tooltip } from "@mui/material";
 
 function ArticleDetails() {
   const { article_id } = useParams();
   const [articleDetails, setArticleDetails] = useState({});
   const [addComment, setAddComment] = useState(false);
   const [optimisticVotes, setOptimisticVotes] = useState(0);
+ 
 
   useEffect(() => {
     getArticleDetails(article_id)
@@ -73,10 +75,16 @@ function ArticleDetails() {
 
       <span id="article-author"> Author: {articleDetails.author}</span>
       <span id="article-comment">Comment: {articleDetails.comment_count}</span>
-      <ThumbUpIcon onClick={handleAddVote} />
+      <Tooltip title="Add Votes">
+        <ThumbUpIcon onClick={handleAddVote} />
+      </Tooltip>
       <span>{articleDetails.votes + optimisticVotes}</span>
-      <ThumbDownIcon onClick={handleMinusVote} />
-      <CommentIcon onClick={handleClick} />
+      <Tooltip title="decrese Votes">
+        <ThumbDownIcon onClick={handleMinusVote} />
+      </Tooltip>
+      <Tooltip title="Add Comment">
+        <CommentIcon onClick={handleClick} />
+      </Tooltip>
       {addComment && <CommentBox setAddComment={setAddComment} />}
       <Comments />
     </div>
