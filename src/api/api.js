@@ -31,10 +31,24 @@ export const getComments = (article_id) => {
     });
 };
 
-export const changeVotes = (article_id,value) => {
+export const changeVotes = (article_id, value) => {
   return newsApi
     .patch(`/api/articles/${article_id}`, { inc_votes: `${value}` })
     .then(({ data }) => {
       return data.articles;
+    });
+};
+
+export const addComments = (
+  article_id,
+  { commentAdded, username = "tickle122" }
+) => {
+  return newsApi
+    .post(`/api/articles/${article_id}/comments`, {
+      username: `${username}`,
+      body: `${commentAdded}`,
+    })
+    .then((data) => {
+      console.log(data);
     });
 };

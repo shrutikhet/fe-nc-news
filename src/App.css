@@ -48,7 +48,8 @@
   margin: 30px;
   border: 2px solid green;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
 .side-panel a.active {
@@ -80,6 +81,9 @@ img {
   margin-right: 30px;
   margin-top: 30px;
   border: 2px solid green;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .footer {
