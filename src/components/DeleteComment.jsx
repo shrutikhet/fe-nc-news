@@ -3,8 +3,7 @@ import { Tooltip } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 function DeleteComment({ comment, setDelComment }) {
-  console.log(comment);
-  function handleDelete(event) {
+  function handleDelete() {
     deleteComments(comment.comment_id)
       .then((data) => {
         setDelComment(true);

@@ -20,6 +20,10 @@ function CommentBox({ setAddComment }) {
       });
   }
 
+  function handleClose() {
+    setAddComment(false);
+  }
+
   return (
     <>
       <div class="divTable redTable">
@@ -40,6 +44,7 @@ function CommentBox({ setAddComment }) {
         <div class="tableFootStyle">
           <div class="links">
             <button onClick={handleAddComment}>Add</button>{" "}
+            <button onClick={handleClose}>Close</button>{" "}
           </div>
         </div>
       </div>

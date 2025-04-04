@@ -1,8 +1,5 @@
-
 import { Link } from "react-router";
 function ArticleItem({ article }) {
-
-  
   return (
     <>
       <Link to={`/articles/${article.article_id}`}>
@@ -16,7 +13,8 @@ function ArticleItem({ article }) {
               alt="article image"
               loading="lazy"
             />
-            Votes: {article.votes}
+            <p>Votes: {article.votes}</p>
+            <br />
           </section>
         </div>
       </Link>

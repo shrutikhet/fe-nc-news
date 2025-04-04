@@ -13,7 +13,6 @@ function ArticleDetails() {
   const [articleDetails, setArticleDetails] = useState({});
   const [addComment, setAddComment] = useState(false);
   const [optimisticVotes, setOptimisticVotes] = useState(0);
- 
 
   useEffect(() => {
     getArticleDetails(article_id)
@@ -27,7 +26,6 @@ function ArticleDetails() {
 
   function handleAddVote() {
     setOptimisticVotes((currentOptimisticVotes) => {
-      console.log("c p v:", currentOptimisticVotes);
       return currentOptimisticVotes + 1;
     });
     changeVotes(article_id, 1)
@@ -35,7 +33,6 @@ function ArticleDetails() {
       .catch((error) => {
         console.log(error);
         setOptimisticVotes((currentOptimisticVotes) => {
-          console.log("c p v:", currentOptimisticVotes);
           return currentOptimisticVotes - 1;
         });
       });
@@ -43,7 +40,6 @@ function ArticleDetails() {
 
   function handleMinusVote() {
     setOptimisticVotes((currentOptimisticVotes) => {
-      console.log("c p v:", currentOptimisticVotes);
       return currentOptimisticVotes - 1;
     });
     changeVotes(article_id, -1)
@@ -53,7 +49,6 @@ function ArticleDetails() {
       .catch((error) => {
         console.log(error);
         setOptimisticVotes((currentOptimisticVotes) => {
-          console.log("c p v:", currentOptimisticVotes);
           return currentOptimisticVotes + 1;
         });
       });
@@ -64,30 +59,44 @@ function ArticleDetails() {
   }
 
   return (
-    <div className="details line-height color-bk">
-      <span id="article-img">
-        <img src={articleDetails.article_img_url} alt="soemthing else" />
+    <section className="article-item">
+      <img src={articleDetails.article_img_url} alt="soemthing else" />
+      <br />
+      <span id="article-title" className="title-bold">
+        {articleDetails.title}
       </span>
-      <span id="article-title">{articleDetails.title}</span>
-      <span id="article-body" className="color-title">
+      <br />
+      <p id="article-body" className="color-title">
         {articleDetails.body}
+      </p>
+      <br />
+      <span id="article-author" className="line-height">
+        {" "}
+        Author: {articleDetails.author}
       </span>
+      <section className="item4">
+        <span id="article-comment">
+          Comment: {articleDetails.comment_count}
+        </span>
+        <br />
+        <span>{articleDetails.votes + optimisticVotes}</span>
+        <Tooltip title="Add Votes">
+          <ThumbUpIcon onClick={handleAddVote} />
+        </Tooltip>
+        {"  "}
 
-      <span id="article-author"> Author: {articleDetails.author}</span>
-      <span id="article-comment">Comment: {articleDetails.comment_count}</span>
-      <Tooltip title="Add Votes">
-        <ThumbUpIcon onClick={handleAddVote} />
-      </Tooltip>
-      <span>{articleDetails.votes + optimisticVotes}</span>
-      <Tooltip title="decrese Votes">
-        <ThumbDownIcon onClick={handleMinusVote} />
-      </Tooltip>
-      <Tooltip title="Add Comment">
-        <CommentIcon onClick={handleClick} />
-      </Tooltip>
-      {addComment && <CommentBox setAddComment={setAddComment} />}
+        <Tooltip title="decrese Votes">
+          <ThumbDownIcon onClick={handleMinusVote} />
+        </Tooltip>
+        <br />
+        <Tooltip title="Add Comment">
+          <CommentIcon onClick={handleClick} />
+        </Tooltip>
+        {addComment && <CommentBox setAddComment={setAddComment} />}
+      </section>
+      <br />
       <Comments />
-    </div>
+    </section>
   );
 }
 

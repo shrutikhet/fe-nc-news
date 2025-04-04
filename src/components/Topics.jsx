@@ -1,7 +1,7 @@
 import { getTopics } from "../api/api";
 import TopicItem from "./TopicItem";
 import { useEffect, useState } from "react";
-function Topics(props) {
+function Topics() {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
@@ -15,9 +15,9 @@ function Topics(props) {
   }, []);
 
   return (
-    <section className="side-panel">
+    <section>
       <div>TOPICS</div>
-      <br />
+
       {topics && topics.length > 0
         ? topics.map((topic) => {
             return <TopicItem key={topic.slug} topic={topic} />;
