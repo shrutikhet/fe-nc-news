@@ -1,17 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
-import Nav from "./components/Nav";
+
 import Footer from "./components/Footer";
 import Topics from "./components/Topics";
 import Articles from "./components/Articles";
 import { Routes, Route } from "react-router";
 import ArticleDetails from "./components/ArticleDetails";
-import Comments from "./components/Comments";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="grid-container">
       <Header />

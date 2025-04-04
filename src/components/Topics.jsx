@@ -3,16 +3,24 @@ import TopicItem from "./TopicItem";
 import { useEffect, useState } from "react";
 function Topics() {
   const [topics, setTopics] = useState([]);
+  const [isError, setIsError] = useState(false);
+  const [errMsg, setErrMsg] = useState({});
 
   useEffect(() => {
     getTopics()
       .then((topics) => {
         setTopics(topics);
+        setIsError(false);
       })
       .catch((error) => {
-        console.log(error);
+        setIsError(true);
+        setErrMsg(error.response.data);
       });
   }, []);
+
+  if (isError) {
+    return <Error errMsg={errMsg} />;
+  }
 
   return (
     <section>
