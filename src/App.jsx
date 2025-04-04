@@ -13,7 +13,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div className="grid-container">
       <Header />
       <Routes>
         <Route
@@ -52,7 +52,7 @@ function App() {
         ></Route>
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 

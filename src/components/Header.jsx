@@ -1,8 +1,9 @@
 import { Link } from "react-router";
 
-function Header(props) {
+function Header() {
   return (
-    <div className="header">
+    <div className="item1">
+      <h1>Share and Learn</h1>
       <Link to="/">
         <img
           src="../src/assets/logo.jpg"
@@ -10,8 +11,6 @@ function Header(props) {
           className="resize-logo"
         />
       </Link>
-      <label>Search</label>
-      <p>user</p>
     </div>
   );
 }
