@@ -110,7 +110,7 @@ function ArticleDetails() {
         </>
       ) : (
         <>
-          <Error errMsg={errMsg}/>
+          <Error className="item3" errMsg={errMsg} />
         </>
       )}
     </>

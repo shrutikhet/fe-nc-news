@@ -19,7 +19,11 @@ function Topics() {
   }, []);
 
   if (isError) {
-    return <Error errMsg={errMsg} />;
+    return (
+      <>
+        <Error className="item3" errMsg={errMsg} />
+      </>
+    );
   }
 
   return (

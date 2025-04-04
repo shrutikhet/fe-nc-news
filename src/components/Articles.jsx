@@ -32,7 +32,8 @@ function Articles() {
   }, [value]);
 
   if (isError) {
-    return <Error errMsg={errMsg} />;
+    console.log("inside error");
+    return <Error className="item3" errMsg={errMsg} />;
   }
   return (
     <>
