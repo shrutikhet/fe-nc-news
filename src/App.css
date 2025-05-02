@@ -10,6 +10,8 @@ body {
 
 .grid-container {
   display: grid;
+  grid-template-rows: 5%, 90%, 5%;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-areas:
     "header header header header header header"
     "menu main main main main main"
@@ -29,8 +31,6 @@ body {
   background-color: #223d3c;
   text-align: center;
   color: #ffffff;
-  height: fit-content;
-  line-height: 1.2rem;
 }
 .item1 > h1 {
   font-size: 40px;
@@ -61,7 +61,7 @@ body {
 
 .item3 {
   grid-area: main;
-  padding-left: 30px;
+  /* --padding-left: 30px; */
 }
 
 .item3 > h1 {
@@ -79,7 +79,9 @@ body {
   background-color: white;
   padding: 15px;
   color: #000000;
-  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .item4 > h2 {
@@ -88,7 +90,6 @@ body {
 }
 
 .item4 li {
-  padding: 5px;
   margin-bottom: 5px;
 }
 
@@ -100,85 +101,18 @@ body {
   height: fit-content;
 }
 
-.resize {
-  width: 75%;
-  height: 60%;
-}
-
 .resize-logo {
   width: 10%;
-  height: 20%;
+  height: auto;
 }
 .article-item {
   padding: 2px;
 }
-/* .side-panel {
-  padding-left: 1rem;
-  width: 220px;
-  background-color: #ffffff;
-  position: fixed;
-  height: 470px;
-  overflow: auto;
-  margin: 30px;
-  border: 2px solid green;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
 
-.side-panel a.active {
-  background-color: #04aa6d;
-  color: white;
-}
-
-.side-panel a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-} */
 img {
   object-fit: cover;
   border-radius: 8px;
 }
-/* .details {
-  padding-left: 1rem;
-  margin-left: 300px;
-  font-size: 20px;
-  height: 470px;
-  overflow: auto;
-  background-color: white;
-  width: 1100px;
-  position: fixed;
-  margin-right: 30px;
-  margin-top: 30px;
-  border: 2px solid lightgoldenrodyellow;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-} */
-
-/* .footer {
-  border: 2px solid red;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #f9f7f7;
-  color: red;
-  height: 15%;
-  text-align: center;
-} */
-
-/* .line-height {
-  line-height: 1.5;
-}
-
-.color-bk {
-  background-color: cadetblue;
-}
-
-.color-title {
-  background-color: rosybrown;
-} */
 
 .comments {
   background-color: #ffffff;
@@ -201,4 +135,18 @@ img {
 
 .line-height {
   line-height: 1.2rem;
+}
+
+.voting {
+  background-color: gold;
+  border-radius: 8px;
+  width: auto;
+  margin: 2px;
+}
+
+.total-comments {
+  background-color: goldenrod;
+  border-radius: 8px;
+  width: fit-content;
+  margin: 2px;
 }

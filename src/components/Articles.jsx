@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { getArticles } from "../api/api";
 import ArticleItem from "./ArticleItem";
 import { useSearchParams } from "react-router";
+import Loading from "./Loading";
 
 function Articles() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+  const [errMsg, setErrMsg] = useState({});
 
   const column = searchParams.get("column_name");
   const value = searchParams.get("value");
@@ -17,13 +20,21 @@ function Articles() {
   useEffect(() => {
     getArticles(params)
       .then((articles) => {
+        setIsLoading(false);
+        setIsError(false);
         setArticles(articles);
       })
       .catch((error) => {
-        console.log(error);
+        setErrMsg(error.response.data);
+        setIsError(true);
       });
-    setIsLoading(false);
+    setIsLoading(true);
   }, [value]);
+
+  if (isError) {
+    console.log("inside error");
+    return <Error className="item3" errMsg={errMsg} />;
+  }
   return (
     <>
       {!isLoading ? (
@@ -37,7 +48,7 @@ function Articles() {
             : null}
         </section>
       ) : (
-        <p>Loading..</p>
+        <Loading />
       )}
     </>
   );
