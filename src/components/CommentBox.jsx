@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { addComments } from "../api/api";
 function CommentBox({ setAddComment }) {
   const { article_id } = useParams();
-  const [commentAdded, setCommentAdded] = useState("");
+  const [commentAdded, setCommentAdded] = useState("Join the conversation");
 
   function handleChange(event) {
     setCommentAdded(event.target.value);

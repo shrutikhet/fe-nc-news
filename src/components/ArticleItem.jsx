@@ -3,7 +3,7 @@ function ArticleItem({ article }) {
   return (
     <>
       <Link to={`/articles/${article.article_id}`}>
-        <div className="article-item">
+        <div>
           <p>Author: {article.author}</p>
           <h4>Title: {article.title}</h4>
           <section>

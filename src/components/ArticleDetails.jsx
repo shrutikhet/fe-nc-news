@@ -66,10 +66,15 @@ function ArticleDetails() {
   return (
     <>
       {!isError ? (
-        <>
+        <div className="item3">
           {" "}
-          <section className="item3">
-            <img src={articleDetails.article_img_url} alt="soemthing else" />
+          <section>
+            <img
+              src={articleDetails.article_img_url}
+              alt="article image"
+              loading="lazy"
+              // className="resize"
+            />
             <br />
             <span id="article-title" className="title-bold">
               {articleDetails.title}
@@ -81,33 +86,31 @@ function ArticleDetails() {
             <br />
             <span id="article-author" className="line-height">
               {" "}
-              Author: {articleDetails.author}
+              Author: {articleDetails.author}{" "}
             </span>
-
-            <br />
-            <Comments />
           </section>
           <section className="item4">
-            <span id="article-comment">
+            <span id="article-comment" class="total-comments">
               Comment: {articleDetails.comment_count}
             </span>
-            <br />
-            <span>{articleDetails.votes + optimisticVotes}</span>
-            <Tooltip title="Add Votes">
-              <ThumbUpIcon onClick={handleAddVote} />
-            </Tooltip>
-            {"  "}
 
-            <Tooltip title="decrese Votes">
-              <ThumbDownIcon onClick={handleMinusVote} />
-            </Tooltip>
-            <br />
+            <span class="voting">
+              <Tooltip title="Add Votes">
+                <ThumbUpIcon onClick={handleAddVote} />
+              </Tooltip>
+              <span>{articleDetails.votes + optimisticVotes}</span>
+
+              <Tooltip title="decrese Votes">
+                <ThumbDownIcon onClick={handleMinusVote} />
+              </Tooltip>
+            </span>
             <Tooltip title="Add Comment">
               <CommentIcon onClick={handleClick} />
             </Tooltip>
             {addComment && <CommentBox setAddComment={setAddComment} />}
           </section>
-        </>
+          <Comments />
+        </div>
       ) : (
         <>
           <Error className="item3" errMsg={errMsg} />
